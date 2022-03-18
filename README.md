@@ -6,8 +6,6 @@ A movie database project made in React.Js, Node.Js and Express.
 
 The project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This product uses the TMDb API but is not endorsed or certified by TMDb.
-
 
 ## Available Scripts
 
