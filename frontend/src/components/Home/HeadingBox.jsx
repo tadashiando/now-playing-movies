@@ -1,37 +1,19 @@
-import React, { useState, Fragment } from 'react'
-import dompurify from 'dompurify'
-import i18n from '../../i18n.json'
+import React, { Fragment } from 'react'
 
-export default function HeadingBox({ lang, setPage, page }) {
-  const [labels] = useState(i18n.homepageHeadingBox)
-
-  const handlePageDown = (e) => {
-    e.preventDefault()
-    setPage(page > 1 && page-- )
-  }
-
-  const handlePageUp = (e) => {
-    e.preventDefault()
-    setPage(page++)
-  }
+export default function HeadingBox({ handlePageUp, handlePageDown }) {
 
   return (
     <Fragment>
       <div className='bg-dark text-light'>
         <div className='container'>
           <div className='row'>
-            <h1
-              className='col'
-              dangerouslySetInnerHTML={{
-                __html: dompurify.sanitize(labels.heading[lang])
-              }}></h1>
             <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-end">
-                <li class="page-item disabled">
-                  <a class="page-link" onClick={handlePageDown} href='#' tabindex="-1">Previous</a>
+              <ul className="pagination justify-content-end">
+                <li className="page-item">
+                  <a className="page-link" onClick={e => handlePageDown(e)} href >Previous Page</a>
                 </li>
-                <li class="page-item">
-                  <a class="page-link"onClick={handlePageUp} href='#' >Next</a>
+                <li className="page-item">
+                  <a className="page-link"onClick={e => handlePageUp(e)} href >Next Page</a>
                 </li>
               </ul>
             </nav>

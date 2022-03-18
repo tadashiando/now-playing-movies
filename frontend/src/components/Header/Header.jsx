@@ -3,7 +3,7 @@ import logo from '../../resources/images/logo-dark.png'
 import github from '../../resources/images/github.svg'
 import linkedin from '../../resources/images/linkedin.png'
 
-export default function Header({ lang }) {
+export default function Header() {
 
   const imagePlacement = 'url(data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==)'
 
@@ -18,7 +18,7 @@ export default function Header({ lang }) {
       <div className='container text-white'>
         <div className='row justify-content-md-center'>
           <div className='col'>
-            <a href={`/${lang}`}>
+            <a href={'/'}>
               <img className='img-fluid text-center resized-logo' src={logo} alt='logo' />
             </a>
           </div>

@@ -2,8 +2,7 @@ import React from 'react'
 import Movie from './Movie'
 import Loading from '../Loading/Loading'
 
-export default function MovieList({ lang, data, dataIsReady }) {
-  console.log(data);
+export default function MovieList({ data, dataIsReady, handlePageDown, handlePageUp }) {
   const movieList = data?.results
   const boxes = [0,1,2]
 
@@ -13,8 +12,20 @@ export default function MovieList({ lang, data, dataIsReady }) {
         <div className='container'>
           <div className='row'>
             {movieList.map(movie => (
-              <Movie lang={lang} key={movie.id} data={movie} />
+              <Movie key={movie.id} data={movie} />
             ))}
+          </div>
+          <div className='row'>
+            <nav aria-label="Page navigation example">
+              <ul className="pagination justify-content-end">
+                <li className="page-item">
+                  <a className="page-link" onClick={e => handlePageDown(e)} href >Previous Page</a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link"onClick={e => handlePageUp(e)} href >Next Page</a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       ) : (

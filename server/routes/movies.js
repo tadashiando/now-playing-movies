@@ -15,8 +15,8 @@ const getMovies = async (page) => {
 }
 
 // providing a constant endpoint for now playing movies
-app.get('/api/:lang/now-playing', async (req, res, next) => {
-    getMovies(req.body.page)
+app.get('/api/now-playing', async (req, res, next) => {
+    getMovies(req.query.page)
         .then(response => res.json(response.data))
         .catch(err => next(err));
     console.log('Now playing endpoint has been called!')

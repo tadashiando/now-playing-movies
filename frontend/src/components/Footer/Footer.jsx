@@ -1,9 +1,7 @@
-import React, { useState } from 'react'
-import logo from '../../resources/images/logo-light.svg'
-import i18n from '../../i18n.json'
+import React from 'react'
+import logo from '../../resources/images/logo-light.png'
 
-export default function Footer({ lang }) {
-  const [labels] = useState(i18n.footer)
+export default function Footer() {
 
   return (
     <footer className='bg-light'>
@@ -14,7 +12,7 @@ export default function Footer({ lang }) {
             <p className='text-center mt-2'>copyright © 2022 tadashiando</p>
           </div>
           <div className='col align-self-end'>
-            <p className='lead'>{labels.text[lang]}</p>
+            <p className='lead'>This is a paginated list of the most recent movies on The Movie Database. This product uses the TMDb API but is not endorsed or certified by TMDb.</p>
             <p>
               <span className='badge badge-success'>#TMDb</span> <span className='badge badge-warning'>#now-playing</span>{' '}
               <span className='badge badge-light'>#ReactJS</span> <span className='badge badge-danger'>#bootstrap</span>

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Movie({ lang, data }) {
+export default function Movie({ data }) {
   const getPoster = () => {
     const poster = 'https://image.tmdb.org/t/p/w342' + data.poster_path
     return poster
